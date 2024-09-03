@@ -52,8 +52,8 @@ public class HistoriqueTransactionServiceImpl implements HistoriqueTransactionSe
     }
 
     @Override
-    public List<HistoriqueTransactionDTO> findByCarteCreditEntityId(Long id) {
-        return repository.findByCarteCreditId(id)
+    public List<HistoriqueTransactionDTO> findByCarteCreditNumeroCarte(String numeroCarte) {
+        return repository.findByCarteCreditNumeroCarte(numeroCarte)
                 .stream()
                 .map(mapper::toDto)
                 .collect(Collectors.toCollection(ArrayList::new));

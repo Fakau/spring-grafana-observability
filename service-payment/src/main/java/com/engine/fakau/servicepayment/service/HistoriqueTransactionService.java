@@ -13,5 +13,5 @@ public interface HistoriqueTransactionService {
 
     List<HistoriqueTransactionDTO> findAll();
 
-    List<HistoriqueTransactionDTO> findByCarteCreditEntityId(Long id);
+    List<HistoriqueTransactionDTO> findByCarteCreditNumeroCarte(String numeroCarte);
 }

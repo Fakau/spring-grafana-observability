@@ -1,7 +1,7 @@
 package com.engine.fakau.servicepayment.service;
 
 import com.engine.fakau.servicepayment.service.dto.CarteCreditDTO;
-import com.engine.fakau.servicepayment.service.dto.CreerPaiementDTO;
+import com.engine.fakau.servicepayment.request.CreerPaiementRequest;
 
 import java.util.List;
 
@@ -12,5 +12,5 @@ public interface CarteCreditService {
     CarteCreditDTO findById(Long id);
     CarteCreditDTO findByNumeroCarte(String numeroCarte);
     List<CarteCreditDTO> findAll();
-    void creerPaiement(CreerPaiementDTO creerPaiementDTO);
+    void creerPaiement(CreerPaiementRequest creerPaiementDTO);
 }

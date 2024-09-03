@@ -8,7 +8,6 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Getter
 @Setter
@@ -23,6 +22,5 @@ public class CarteCreditDTO implements Serializable {
     private BigDecimal limitCredit;
     private BigDecimal creditDisponible;
     private TypeCompte typeCompte;
-    private List<HistoriqueTransactionDTO> historiqueTransactions;
 
 }

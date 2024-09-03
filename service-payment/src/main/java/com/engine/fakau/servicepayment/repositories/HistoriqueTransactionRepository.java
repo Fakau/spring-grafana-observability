@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface HistoriqueTransactionRepository extends JpaRepository<HistoriqueTransactionEntity, Long> {
-    List<HistoriqueTransactionEntity> findByCarteCreditId(Long id);
+    List<HistoriqueTransactionEntity> findByCarteCreditNumeroCarte(String id);
 }

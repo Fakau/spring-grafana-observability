@@ -2,7 +2,7 @@ package com.engine.fakau.servicepayment.web;
 
 import com.engine.fakau.servicepayment.service.dto.CarteCreditDTO;
 import com.engine.fakau.servicepayment.service.CarteCreditService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.engine.fakau.servicepayment.request.CreerPaiementRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +22,12 @@ public class CarteCreditController {
     public ResponseEntity<CarteCreditDTO> createCarteCredit(@RequestBody CarteCreditDTO carteCreditDTO) {
         CarteCreditDTO result = carteCreditService.save(carteCreditDTO);
         return ResponseEntity.ok(result);
+    }
+
+    @PostMapping("/paiement")
+    public ResponseEntity<Void> createCarteCredit(@RequestBody CreerPaiementRequest creerPaiementRequest) {
+        carteCreditService.creerPaiement(creerPaiementRequest);
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")

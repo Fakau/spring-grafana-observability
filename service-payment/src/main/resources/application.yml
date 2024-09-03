@@ -2,9 +2,12 @@ spring:
   application:
    name: service-payment
   datasource:
-    url: jdbc:h2:mem:mydb
+    url: jdbc:h2:mem:paiementdb
     username: sa
     password: password
     driverClassName: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8080

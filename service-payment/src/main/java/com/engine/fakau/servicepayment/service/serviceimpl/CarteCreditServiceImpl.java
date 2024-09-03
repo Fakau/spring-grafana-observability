@@ -7,7 +7,7 @@ import com.engine.fakau.servicepayment.service.dto.CarteCreditDTO;
 import com.engine.fakau.servicepayment.entities.CarteCreditEntity;
 import com.engine.fakau.servicepayment.repositories.CarteCreditRepository;
 import com.engine.fakau.servicepayment.service.CarteCreditService;
-import com.engine.fakau.servicepayment.service.dto.CreerPaiementDTO;
+import com.engine.fakau.servicepayment.request.CreerPaiementRequest;
 import com.engine.fakau.servicepayment.service.mapper.CarteCreditMapper;
 import org.springframework.stereotype.Service;
 import static com.engine.fakau.servicepayment.utils.Constants.*;
@@ -76,7 +76,7 @@ public class CarteCreditServiceImpl implements CarteCreditService {
     }
 
     @Override
-    public void creerPaiement(CreerPaiementDTO creerPaiementDTO) {
+    public void creerPaiement(CreerPaiementRequest creerPaiementDTO) {
         CarteCreditEntity cpMarchant = carteCreditRepository.findByNumeroCarteAndTypeCompte(creerPaiementDTO.numeroMarchant(), TypeCompte.MARCHANT)
                 .orElseThrow(() -> new CompteMarchantNotFoundException(CONTACTER_MARCHANT));
         CarteCreditEntity cpClient = carteCreditRepository.findByNumeroCarteAndTypeCompte(creerPaiementDTO.numeroCarte(), TypeCompte.CLIENT)
@@ -89,7 +89,7 @@ public class CarteCreditServiceImpl implements CarteCreditService {
         historiqueTransactionService.save(carteCreditMapper.toDto(cpClient), carteCreditMapper.toDto(cpMarchant), BigDecimal.valueOf(creerPaiementDTO.montant()));
     }
 
-    private void isValide(CarteCreditEntity cpMarchant, CarteCreditEntity cpClient, CreerPaiementDTO creerPaiementDTO) {
+    private void isValide(CarteCreditEntity cpMarchant, CarteCreditEntity cpClient, CreerPaiementRequest creerPaiementDTO) {
         if (!cpClient.getCodeSecurite().equals(creerPaiementDTO.codeSecurite())) {
             throw new InformationCarteIncorrectException(INFORMATION_INCORRECTE);
         }

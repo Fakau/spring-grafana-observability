@@ -30,9 +30,9 @@ public class HistoriqueTransactionController {
         return ResponseEntity.ok(list);
     }
 
-    @GetMapping("/carte-credit/{id}")
-    public ResponseEntity<List<HistoriqueTransactionDTO>> getByCarteCreditId(@PathVariable Long id) {
-        List<HistoriqueTransactionDTO> list = service.findByCarteCreditEntityId(id);
+    @GetMapping("/carte-credit/{numeroCarte}")
+    public ResponseEntity<List<HistoriqueTransactionDTO>> getByCarteCreditId(@PathVariable String numeroCarte) {
+        List<HistoriqueTransactionDTO> list = service.findByCarteCreditNumeroCarte(numeroCarte);
         return ResponseEntity.ok(list);
     }
 }

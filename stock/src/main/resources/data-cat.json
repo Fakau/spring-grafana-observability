@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "libelle": "Electronics",
+    "description": "Electronic items"
+  },
+  {
+    "id": 2,
+    "libelle": "Books",
+    "description": "Various books"
+  },
+  {
+    "id": 3,
+    "libelle": "Clothing",
+    "description": "Apparel and accessories"
+  }
+]

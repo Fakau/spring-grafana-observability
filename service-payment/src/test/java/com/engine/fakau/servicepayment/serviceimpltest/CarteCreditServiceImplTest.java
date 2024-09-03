@@ -5,7 +5,7 @@ import com.engine.fakau.servicepayment.entities.enumeration.TypeCompte;
 import com.engine.fakau.servicepayment.repositories.CarteCreditRepository;
 import com.engine.fakau.servicepayment.service.HistoriqueTransactionService;
 import com.engine.fakau.servicepayment.service.dto.CarteCreditDTO;
-import com.engine.fakau.servicepayment.service.dto.CreerPaiementDTO;
+import com.engine.fakau.servicepayment.request.CreerPaiementRequest;
 import com.engine.fakau.servicepayment.service.mapper.CarteCreditMapper;
 import com.engine.fakau.servicepayment.service.serviceimpl.CarteCreditServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -129,7 +129,7 @@ class CarteCreditServiceImplTest {
         Double montant = 100.0;
         String codeSecurite = "123";
         String dateExpiration = LocalDate.now().plusDays(1).toString();
-        CreerPaiementDTO creerPaiementDTO = new CreerPaiementDTO(
+        CreerPaiementRequest creerPaiementDTO = new CreerPaiementRequest(
                 numeroMarchant,
                 numeroCarte,
                 dateExpiration,
