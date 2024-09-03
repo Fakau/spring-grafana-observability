@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "libelle": "Smartphone",
+    "description": "Latest model smartphone",
+    "prix": 699.99,
+    "quantite": 50,
+    "categorie": {
+      "id": 1
+    }
+  },
+  {
+    "id": 2,
+    "libelle": "Laptop",
+    "description": "High performance laptop",
+    "prix": 1299.99,
+    "quantite": 30,
+    "categorie": {
+      "id": 1
+    }
+  },
+  {
+    "id": 3,
+    "libelle": "Headphones",
+    "description": "Noise-cancelling headphones",
+    "prix": 199.99,
+    "quantite": 100,
+    "categorie": {
+      "id": 1
+    }
+  },
+  {
+    "id": 4,
+    "libelle": "Fiction Book",
+    "description": "Bestselling fiction book",
+    "prix": 19.99,
+    "quantite": 200,
+    "categorie": {
+      "id": 2
+    }
+  },
+  {
+    "id": 5,
+    "libelle": "Non-Fiction Book",
+    "description": "Popular non-fiction book",
+    "prix": 24.99,
+    "quantite": 150,
+    "categorie": {
+      "id": 2
+    }
+  },
+  {
+    "id": 6,
+    "libelle": "Textbook",
+    "description": "Educational textbook",
+    "prix": 49.99,
+    "quantite": 80,
+    "categorie": {
+      "id": 2
+    }
+  },
+  {
+    "id": 7,
+    "libelle": "T-Shirt",
+    "description": "Cotton t-shirt",
+    "prix": 14.99,
+    "quantite": 300,
+    "categorie": {
+      "id": 3
+    }
+  },
+  {
+    "id": 8,
+    "libelle": "Jeans",
+    "description": "Denim jeans",
+    "prix": 39.99,
+    "quantite": 120,
+    "categorie": {
+      "id": 3
+    }
+  },
+  {
+    "id": 9,
+    "libelle": "Jacket",
+    "description": "Winter jacket",
+    "prix": 89.99,
+    "quantite": 60,
+    "categorie": {
+      "id": 3
+    }
+  },
+  {
+    "id": 10,
+    "libelle": "Sneakers",
+    "description": "Running sneakers",
+    "prix": 59.99,
+    "quantite": 90,
+    "categorie": {
+      "id": 3
+    }
+  }
+]

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: stock-service
+  datasource:
+    url: jdbc:h2:mem:stockdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8081
+
+service:
+  payment:
+    url: http://localhost:8080/api/carte-credits
+    numeroMarchant: 9898656789012345
