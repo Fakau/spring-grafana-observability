@@ -42,5 +42,4 @@ spring boot grafana prometheus is an application that enables users to sale prod
 - [Payment service: http://localhost:8081](http://localhost:8081)
 
 ### Postman collection
-- [Postman collection: ./spring grafana.postman_collection.json](spring grafana.postman_collection.json)
-
+- [Postman collection: ./spring grafana.postman_collection.json](./spring%20grafana.postman_collection.json)
