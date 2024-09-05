@@ -6,7 +6,6 @@ import com.engine.fakau.stock.exception.StockInsuffisant;
 import com.engine.fakau.stock.repositories.ProduitRepository;
 import com.engine.fakau.stock.request.ProduitRequest;
 import com.engine.fakau.stock.request.SaleProduitRequet;
-import com.engine.fakau.stock.request.SendPaymentRequest;
 import com.engine.fakau.stock.services.ProduitService;
 import com.engine.fakau.stock.services.dto.ProduitDTO;
 import com.engine.fakau.stock.services.mappers.ProduitMapper;
@@ -14,9 +13,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 

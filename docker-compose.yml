@@ -1,0 +1,62 @@
+services:
+  prometheus-service:
+    image: prom/prometheus
+    container_name: prometheus-service
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  
+  tempo-service:
+    image: grafana/tempo
+    container_name: tempo-service
+    command: [ "-config.file=/etc/tempo.yaml" ]
+    volumes:
+      - ./docker/tempo/tempo.yml:/etc/tempo.yaml:ro
+      - ./docker/tempo/tempo-data:/tmp/tempo
+    ports:
+      - "3200:3200" # Tempo
+      - "9411:9411" # zipkin
+
+  loki-service:
+    image: grafana/loki:main
+    container_name: loki-service
+    command: [ "-config.file=/etc/loki/local-config.yaml" ]
+    ports:
+      - "3100:3100"
+
+  grafana-service:
+    image: grafana/grafana
+    container_name: grafana-service
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./docker/grafana:/etc/grafana/provisioning/datasources:ro
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=password
+
+  payment-service:
+    build: ./service-payment
+    container_name: payment-service
+    depends_on:
+      - tempo-service
+      - loki-service
+    restart: always
+    ports:
+      - "8080:8080"
+
+  stock-service:
+    build: ./stock
+    container_name: stock-service
+    depends_on:
+      - tempo-service
+      - loki-service
+    restart: always
+    environment: 
+      SERVICE_PAYMENT_HOST: payment-service
+      SERVICE_PAYMENT_PORT: 8080
+    ports:
+      - "8081:8081"
