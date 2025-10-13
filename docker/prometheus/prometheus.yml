@@ -3,10 +3,19 @@ global:
   evaluation_interval: 10s
 
 scrape_configs:
-  - job_name: 'stock_service'
+
+  - job_name: 'app_sns'
     metrics_path: '/actuator/prometheus'
     scrape_interval: 5s
     static_configs:
-      - targets: ['stock-service:8081']
+      - targets: [ 'app_sns:8081' ]
         labels:
-          application: 'My Stock Service Application'
+          application: 'sns application'
+
+  - job_name: 'app_fco'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: [ 'app_fco:8082' ]
+        labels:
+          application: 'fco application'

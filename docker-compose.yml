@@ -38,6 +38,13 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=password
 
+  mail-dev:
+    container_name: mail-service
+    image: maildev/maildev
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+
   payment-service:
     build: ./service-payment
     container_name: payment-service
